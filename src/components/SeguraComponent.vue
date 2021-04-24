@@ -24,7 +24,7 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-group prepend-icon="mdi-circle" no-action>
+          <v-list-group prepend-icon="mdi-file-table" no-action>
             <template v-slot:activator>
               <v-list-item>
                 <v-list-item-title> Admin </v-list-item-title>
@@ -42,8 +42,8 @@
             </v-list-item>
           </v-list-group>
 
-          <v-list-group
-          prepend-icon="mdi-triangle"
+          <v-list-group v-if="this.$store.state.user.rol === 'administrador'"
+          prepend-icon="mdi-security"
           no-action>
             <template v-slot:activator>
               <v-list-item>
@@ -51,8 +51,9 @@
               </v-list-item>
             </template>
 
-            <v-list-item :to="{ name: 'Usuario' }" >
-              <v-list-item-content>
+            <v-list-item :to="{ name: 'Usuario' }" 
+            >
+              <v-list-item-content >
                 <v-list-item-title> Usuario </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -75,14 +76,14 @@ export default {
   name: "SeguraComponent",
   data() {
     return {
-      drawer: null,
-      selectedItem: 1,
-      items: [
-        { text: "Home", icon: "mdi-home", ruta: "Home" },
-        { text: "Categorías", icon: "mdi-table", ruta: "Categoria" },
-        { text: "Artículos", icon: "mdi-file", ruta: "Articulo" },
-        { text: "Usuario", icon: "mdi-account", ruta: "Usuario" },
-      ],
+    drawer: null,
+    selectedItem: 1,
+    //   items: [
+    //     { text: "Home", icon: "mdi-home", ruta: "Home" },
+    //     { text: "Categorías", icon: "mdi-table", ruta: "Categoria" },
+    //     { text: "Artículos", icon: "mdi-file", ruta: "Articulo" },
+    //     { text: "Usuario", icon: "mdi-account", ruta: "Usuario" },
+    //   ],
     };
   },
   created() {

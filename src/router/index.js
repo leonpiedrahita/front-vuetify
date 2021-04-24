@@ -54,7 +54,7 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "categoria" */ '../views/Categoria.vue'),
         meta: {
-          auth: true
+          private: true
         },
       },
 
@@ -66,7 +66,7 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "articulo" */ '../views/Articulo.vue'),
         meta: {
-          auth: true
+          private: true
         },
       },
 
@@ -78,7 +78,7 @@ const routes = [
         // which is lazy-loaded when the route is visited.
         component: () => import(/* webpackChunkName: "usuario" */ '../views/Usuario.vue'),
         meta: {
-          auth: true
+          private: true
         },
       },
     ]
